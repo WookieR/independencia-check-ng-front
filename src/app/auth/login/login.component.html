@@ -1,0 +1,37 @@
+<!-- Classes main-div and example-card are catagorized in .css file -->
+<div class="main-div">
+
+    <mat-card class="card-w">
+        <mat-card-header>
+            <mat-card-title class="f-titulo">Ingrese con su usuario</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="login-box-header">
+                <!-- Src image is temporary hosted in image.ibb-->
+            </div>
+            <form [formGroup]="userForm">
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input formControlName="email" matInput placeholder="Correo">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input formControlName="password" matInput placeholder="Contraseña" type="password">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </mat-card-content>
+        <mat-card-actions class="button-center">
+            <button mat-raised-button color="primary" (click)="login()">
+                <mat-icon>login</mat-icon> 
+                Ingresar
+            </button>
+        </mat-card-actions>
+    </mat-card>
