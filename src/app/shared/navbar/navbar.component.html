@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/dashboard">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-flat-button color="primary" *ngIf="authService.adminRole" routerLink="/usuarios">Usuarios</button>
+    <button mat-flat-button color="primary" routerLink="/maquinas">Maquinas</button>
+    <button mat-flat-button color="primary" routerLink="/sectores">Sectores</button>
+    <button mat-flat-button color="primary" routerLink="/items">Items</button>
+    <button mat-flat-button color="primary" routerLink="/asignaciones">Asignaciones</button>
+    <button mat-flat-button color="primary" routerLink="/categorias">Categorias</button>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="salir()">
+      <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>

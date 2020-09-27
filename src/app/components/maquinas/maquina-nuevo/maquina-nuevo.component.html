@@ -2,12 +2,10 @@
 <div class="main-div">
 
     <mat-card class="card-w">
-        <form [formGroup]="userForm" (ngSubmit)="login()">
+        <form [formGroup]="maquinaForm" (ngSubmit)="crearMaquina()">
             <mat-card-header>
-                <mat-card-title class="f-titulo">Ingrese con su usuario</mat-card-title>
+                <mat-card-title class="f-titulo">Nueva maquina</mat-card-title>
             </mat-card-header>
-            <mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
-            <mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
             <mat-card-content>
                 <br/>
                 <div class="login-box-header">
@@ -18,14 +16,15 @@
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input formControlName="email" matInput placeholder="Correo" autocomplete="off">
+                                <input matInput formControlName="nombre" placeholder="Nombre de la maquina" autocomplete="off">
                             </mat-form-field>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input formControlName="password" matInput placeholder="Contraseña" type="password">
+                                <ngx-mat-file-input formControlName="imagen" placeholder="Imagen de la maquina"></ngx-mat-file-input>
+                                <mat-icon matSuffix>folder</mat-icon>
                             </mat-form-field>
                         </td>
                     </tr>
@@ -33,10 +32,12 @@
 
             </mat-card-content>
             <mat-card-actions class="button-center">
-                <button mat-raised-button color="primary">
-                <mat-icon>login</mat-icon> 
-                Ingresar
-            </button>
+                <button mat-raised-button color="primary" type="submit">
+                    Crear
+                </button>
+                <button mat-raised-button type="button" (click)="cerrarDialog()">
+                    Cancelar
+                </button>
             </mat-card-actions>
         </form>
     </mat-card>

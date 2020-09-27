@@ -6,6 +6,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 @NgModule({
   declarations: [],
@@ -16,7 +21,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatGridListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MaterialFileInputModule
   ],
   exports: [
     MatFormFieldModule,
@@ -24,7 +34,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatGridListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MaterialFileInputModule
   ]
 })
 export class MaterialModule { }

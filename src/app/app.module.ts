@@ -6,10 +6,8 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { MaquinasComponent } from './pages/maquinas/maquinas.component';
-import { MainComponent } from './pages/main/main.component';
 import { PagesModule } from './pages/pages.module';
-import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     AuthModule,
-    PagesModule
+    PagesModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

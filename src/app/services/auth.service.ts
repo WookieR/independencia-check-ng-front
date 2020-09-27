@@ -16,6 +16,14 @@ export class AuthService {
 
   public Usuario: Usuario;
 
+  get adminRole(): boolean{
+    if( this.Usuario.rol === 'ADMIN_ROLE'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   get token(){
     return localStorage.getItem('token');
   }
@@ -33,7 +41,6 @@ export class AuthService {
   constructor( private http: HttpClient ) { }
 
   login(formData: FormData){
-    console.log(formData);
     return this.http.post(`${base_url}/login`, formData).pipe(
       tap( (resp:any) => {
         localStorage.setItem('token', resp.token);
@@ -46,10 +53,14 @@ export class AuthService {
       map( (resp:any) => {
         this.Usuario = resp.usuario;
         localStorage.setItem('token', resp.token);
-        console.log(this.Usuario);
         return true;
       }),
       catchError ( err => of(false) )
     );
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.Usuario = null;
   }
 }
