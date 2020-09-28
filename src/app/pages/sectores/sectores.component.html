@@ -1,1 +1,32 @@
-<p>sectores works!</p>
+<mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
+<mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
+
+<mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" *ngIf="!cargando">
+    <mat-grid-tile *ngFor="let sector of sectores">
+        <mat-card class="bg-gray">
+            <mat-card-header>
+                <mat-card-subtitle>{{ sector.maquina.nombre }}</mat-card-subtitle>
+                <mat-card-title class="text-center">
+                    {{ sector.nombre }}
+                </mat-card-title>
+
+            </mat-card-header>
+            <mat-card-content>
+                <img [src]="sector.img | imagen:'sector'" class="w400" />
+            </mat-card-content>
+            <mat-card-actions class="center-button">
+                <button mat-icon-button color="primary" (click)="editarSector(sector)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="borrarSector(sector)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="authService.adminRole">
+        <button mat-fab color="primary" (click)="nuevoSector()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-grid-tile>
+</mat-grid-list>

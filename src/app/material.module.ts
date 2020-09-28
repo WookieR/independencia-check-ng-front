@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    MatSelectModule
   ],
   exports: [
     MatFormFieldModule,
@@ -39,7 +41,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }

@@ -5,6 +5,9 @@ import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaquinaEditarComponent } from './maquinas/maquina-editar/maquina-editar.component';
 import { MaquinaBorrarComponent } from './maquinas/maquina-borrar/maquina-borrar.component';
+import { SectorNuevoComponent } from './sectores/sector-nuevo/sector-nuevo.component';
+import { SectorEditarComponent } from './sectores/sector-editar/sector-editar.component';
+import { SectorBorrarComponent } from './sectores/sector-borrar/sector-borrar.component';
 
 
 
@@ -12,7 +15,10 @@ import { MaquinaBorrarComponent } from './maquinas/maquina-borrar/maquina-borrar
   declarations: [
     MaquinaNuevoComponent,
     MaquinaEditarComponent,
-    MaquinaBorrarComponent
+    MaquinaBorrarComponent,
+    SectorNuevoComponent,
+    SectorEditarComponent,
+    SectorBorrarComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +28,9 @@ import { MaquinaBorrarComponent } from './maquinas/maquina-borrar/maquina-borrar
   exports: [ 
     MaquinaNuevoComponent,
     MaquinaEditarComponent,
-    MaquinaBorrarComponent
+    MaquinaBorrarComponent,
+    SectorNuevoComponent,
+    SectorEditarComponent
   ]
 })
 export class ComponentsModule { }
