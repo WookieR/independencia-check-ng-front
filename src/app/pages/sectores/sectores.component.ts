@@ -65,14 +65,14 @@ export class SectoresComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((resp: Sector) => {
-      // if (!resp){
-      //   return;
-      // }
+      if (!resp){
+        return;
+      }
 
-      this.obtenerSectores();
-      // const index = this.sectores.findIndex( sector => sector._id === resp._id);
+      // this.obtenerSectores();
+      const index = this.sectores.findIndex( sector => sector._id === resp._id);
 
-      // this.sectores[index] = resp;
+      this.sectores[index] = resp;
 
     });
   }

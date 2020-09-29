@@ -1,0 +1,38 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.form-w {
+    width: 400px;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-w {
+    width: 550px;
+}
+
+.button-center {
+    text-align: center;
+}
+
+.f-titulo {
+    color: #3f51b5;
+}

@@ -3,14 +3,14 @@
 
     <mat-card class="card-w">
         <mat-card-header>
-            <mat-card-title class="f-titulo">¿Esta seguro que desa eliminar {{sector.nombre}}?</mat-card-title>
+            <mat-card-title class="f-titulo">¿Esta seguro que desa eliminar {{item.nombre}}?</mat-card-title>
         </mat-card-header>
         <mat-card-actions class="button-center">
-            <button mat-raised-button color="warn" type="submit" (click)="eliminarSector()">
-                    Eliminar
-                </button>
+            <button mat-raised-button color="warn" type="submit" (click)="eliminarItem()">
+                Eliminar
+            </button>
             <button mat-raised-button type="button" (click)="cerrarDialog()">
-                    Cancelar
-                </button>
+                Cancelar
+            </button>
         </mat-card-actions>
     </mat-card>

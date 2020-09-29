@@ -1,1 +1,32 @@
-<p>items works!</p>
+<mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
+<mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
+
+<mat-card *ngIf="!cargando">
+    <mat-card-header>
+        <mat-card-title>Items</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let item of items">
+                {{ item.nombre }} &nbsp;
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary">{{ item.sector.maquina.nombre }}</mat-chip>
+                    <mat-chip color="primary">{{ item.sector.nombre }}</mat-chip>
+                </mat-chip-list>
+
+                <span class="example-spacer"></span>
+                <button mat-stroked-button color="primary" (click)="editarItem(item)"><mat-icon>edit</mat-icon></button>
+                <button mat-stroked-button color="primary" (click)="borrarItem(item)"><mat-icon>delete</mat-icon></button>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngIf="authService.adminRole">
+                <button mat-raised-button color="primary" (click)="nuevoItem()">
+                    <mat-icon>add</mat-icon>
+                    Crear item
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

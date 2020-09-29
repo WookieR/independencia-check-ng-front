@@ -8,6 +8,9 @@ import { MaquinaBorrarComponent } from './maquinas/maquina-borrar/maquina-borrar
 import { SectorNuevoComponent } from './sectores/sector-nuevo/sector-nuevo.component';
 import { SectorEditarComponent } from './sectores/sector-editar/sector-editar.component';
 import { SectorBorrarComponent } from './sectores/sector-borrar/sector-borrar.component';
+import { ItemNuevoComponent } from './items/item-nuevo/item-nuevo.component';
+import { ItemEditarComponent } from './items/item-editar/item-editar.component';
+import { ItemBorrarComponent } from './items/item-borrar/item-borrar.component';
 
 
 
@@ -18,7 +21,10 @@ import { SectorBorrarComponent } from './sectores/sector-borrar/sector-borrar.co
     MaquinaBorrarComponent,
     SectorNuevoComponent,
     SectorEditarComponent,
-    SectorBorrarComponent
+    SectorBorrarComponent,
+    ItemNuevoComponent,
+    ItemEditarComponent,
+    ItemBorrarComponent
   ],
   imports: [
     CommonModule,

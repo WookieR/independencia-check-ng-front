@@ -54,7 +54,7 @@ export class SectorEditarComponent implements OnInit {
       const nombre = this.sectorForm.get('nombre').value;
       const maquina = this.sectorForm.get('maquina').value;
 
-      this.sectoresService.editSector(this.sector._id, nombre, maquina).subscribe(resp => this.dialogRef.close());
+      this.sectoresService.editSector(this.sector._id, nombre, maquina).subscribe(resp => this.dialogRef.close(resp));
     } else {
       // ACTUALIZAR CON IMAGEN
       const nombre = this.sectorForm.get('nombre').value;

@@ -23,8 +23,7 @@ export class SectorBorrarComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  eliminarMaquina(){
-    console.log('Borranding...');
+  eliminarSector(){
     this.sectoresService.deleteSector(this.sector).subscribe(resp => {
       this.dialogRef.close(resp);
     });

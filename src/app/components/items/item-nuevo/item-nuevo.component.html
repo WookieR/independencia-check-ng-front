@@ -2,9 +2,9 @@
 <div class="main-div">
 
     <mat-card class="card-w">
-        <form [formGroup]="sectorForm" (ngSubmit)="crearSector()">
+        <form [formGroup]="itemForm" (ngSubmit)="crearItem()">
             <mat-card-header>
-                <mat-card-title class="f-titulo">Nuevo sector</mat-card-title>
+                <mat-card-title class="f-titulo">Nuevo Item</mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <br/>
@@ -16,29 +16,21 @@
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input matInput formControlName="nombre" placeholder="Nombre del sector" autocomplete="off">
+                                <input matInput formControlName="nombre" placeholder="Nombre del item" autocomplete="off">
                             </mat-form-field>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <mat-select formControlName="maquina">
+                                <mat-select formControlName="sector">
                                     <mat-option value="">
-                                        Seleccione una maquina
+                                        Seleccione un sector
                                     </mat-option>
-                                    <mat-option *ngFor="let maquina of maquinas" [value]="maquina._id">
-                                        {{maquina.nombre}}
+                                    <mat-option *ngFor="let sector of sectores" [value]="sector._id">
+                                        {{sector.nombre}} - {{ sector.maquina.nombre}}
                                     </mat-option>
                                 </mat-select>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <ngx-mat-file-input formControlName="imagen" placeholder="Imagen del sector"></ngx-mat-file-input>
-                                <mat-icon matSuffix>folder</mat-icon>
                             </mat-form-field>
                         </td>
                     </tr>

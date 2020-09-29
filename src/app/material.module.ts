@@ -12,6 +12,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [],
@@ -28,7 +31,10 @@ import { MatSelectModule } from '@angular/material/select';
     MatProgressSpinnerModule,
     MatDialogModule,
     MaterialFileInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule,
+    MatDividerModule,
+    MatChipsModule
   ],
   exports: [
     MatFormFieldModule,
@@ -42,7 +48,10 @@ import { MatSelectModule } from '@angular/material/select';
     MatProgressSpinnerModule,
     MatDialogModule,
     MaterialFileInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule,
+    MatDividerModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule { }
