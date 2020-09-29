@@ -1,0 +1,35 @@
+<!-- Classes main-div and example-card are catagorized in .css file -->
+<div class="main-div">
+
+    <mat-card class="card-w">
+        <form [formGroup]="categoriaForm" (ngSubmit)="crearCategoria()">
+            <mat-card-header>
+                <mat-card-title class="f-titulo">Nueva Categoria</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <br/>
+                <div class="login-box-header">
+                    <!-- Src image is temporary hosted in image.ibb-->
+                </div>
+
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput formControlName="descripcion" placeholder="Descripcion de la categoria" autocomplete="off">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+
+            </mat-card-content>
+            <mat-card-actions class="button-center">
+                <button mat-raised-button color="primary" type="submit">
+                    Crear
+                </button>
+                <button mat-raised-button type="button" (click)="cerrarDialog()">
+                    Cancelar
+                </button>
+            </mat-card-actions>
+        </form>
+    </mat-card>

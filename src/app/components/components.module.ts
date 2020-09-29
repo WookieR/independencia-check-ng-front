@@ -11,6 +11,9 @@ import { SectorBorrarComponent } from './sectores/sector-borrar/sector-borrar.co
 import { ItemNuevoComponent } from './items/item-nuevo/item-nuevo.component';
 import { ItemEditarComponent } from './items/item-editar/item-editar.component';
 import { ItemBorrarComponent } from './items/item-borrar/item-borrar.component';
+import { CategoriaNuevoComponent } from './categorias/categoria-nuevo/categoria-nuevo.component';
+import { CategoriaEditarComponent } from './categorias/categoria-editar/categoria-editar.component';
+import { CategoriaBorrarComponent } from './categorias/categoria-borrar/categoria-borrar.component';
 
 
 
@@ -24,7 +27,10 @@ import { ItemBorrarComponent } from './items/item-borrar/item-borrar.component';
     SectorBorrarComponent,
     ItemNuevoComponent,
     ItemEditarComponent,
-    ItemBorrarComponent
+    ItemBorrarComponent,
+    CategoriaNuevoComponent,
+    CategoriaEditarComponent,
+    CategoriaBorrarComponent
   ],
   imports: [
     CommonModule,

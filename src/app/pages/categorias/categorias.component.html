@@ -1,1 +1,28 @@
-<p>categorias works!</p>
+<mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
+<mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
+
+<mat-card *ngIf="!cargando">
+    <mat-card-header>
+        <mat-card-title>Categorias</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let categoria of categorias">
+                {{ categoria.descripcion }} &nbsp;
+
+                <span class="example-spacer"></span>
+                <button mat-stroked-button color="primary" (click)="editarCategoria(categoria)"><mat-icon>edit</mat-icon></button>
+                <button mat-stroked-button color="primary" (click)="borrarCategoria(categoria)"><mat-icon>delete</mat-icon></button>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngIf="authService.adminRole">
+                <button mat-raised-button color="primary" (click)="nuevaCategoria()">
+                    <mat-icon>add</mat-icon>
+                    Crear item
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
