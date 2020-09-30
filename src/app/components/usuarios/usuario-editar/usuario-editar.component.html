@@ -1,0 +1,71 @@
+<!-- Classes main-div and example-card are catagorized in .css file -->
+<div class="main-div">
+
+    <mat-card class="card-w">
+        <form [formGroup]="usuarioForm" (ngSubmit)="actualizarUsuario()">
+            <mat-card-header>
+                <mat-card-title class="f-titulo">Actualizar Usuario</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <br/>
+                <div class="login-box-header">
+                    <!-- Src image is temporary hosted in image.ibb-->
+                </div>
+
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput formControlName="nombre" placeholder="Nombre" autocomplete="off">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput formControlName="apellido" placeholder="Apellido" autocomplete="off">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput formControlName="dni" placeholder="DNI" autocomplete="off">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-select formControlName="rol">
+                                    <mat-option value="">
+                                        Seleccione un rol
+                                    </mat-option>
+                                    <mat-option *ngFor="let rol of roles" [value]="rol.valor">
+                                        {{ rol.descripcion }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput formControlName="email" placeholder="Correo" autocomplete="off">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </mat-card-content>
+            <mat-card-actions class="button-center">
+                <button mat-raised-button color="primary" type="submit">
+                    Actualizar
+                </button>
+                <button mat-raised-button type="button" (click)="cerrarDialog()">
+                    Cancelar
+                </button>
+            </mat-card-actions>
+        </form>
+    </mat-card>

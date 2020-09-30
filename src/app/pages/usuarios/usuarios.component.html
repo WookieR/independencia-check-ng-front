@@ -1,1 +1,33 @@
-<p>usuarios works!</p>
+<mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
+<mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
+
+<mat-card *ngIf="!cargando">
+    <mat-card-header>
+        <mat-card-title>Usuarios</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let usuario of usuarios">
+                {{ usuario.email }} &nbsp;
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary">{{ usuario.apellido }} {{ usuario.nombre }}</mat-chip>
+                    <mat-chip color="primary">{{ usuario.dni }}</mat-chip>
+                    <mat-chip color="primary" *ngIf="usuario.rol === 'ADMIN_ROLE'">Administrador</mat-chip>
+                    <mat-chip color="primary" *ngIf="usuario.rol === 'USER_ROLE'">Usuario</mat-chip>
+                </mat-chip-list>
+                <span class="example-spacer"></span>
+                <button mat-stroked-button color="primary" (click)="editarUsuario(usuario)"><mat-icon>edit</mat-icon></button>
+                <button mat-stroked-button color="primary" (click)="borrarUsuario(usuario)"><mat-icon>delete</mat-icon></button>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngIf="authService.adminRole">
+                <button mat-raised-button color="primary" (click)="nuevoUsuario()">
+                    <mat-icon>add</mat-icon>
+                    Registrar nuevo usuario
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

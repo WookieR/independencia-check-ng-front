@@ -3,10 +3,10 @@
 
     <mat-card class="card-w">
         <mat-card-header>
-            <mat-card-title class="f-titulo">¿Esta seguro que desea eliminar {{categoria.descripcion}}?</mat-card-title>
+            <mat-card-title class="f-titulo">¿Esta seguro que desea eliminar a {{usuario.nombre}} {{ usuario.apellido}}?</mat-card-title>
         </mat-card-header>
         <mat-card-actions class="button-center">
-            <button mat-raised-button color="warn" type="submit" (click)="eliminarCategoria()">
+            <button mat-raised-button color="warn" type="submit" (click)="eliminarUsuario()">
                 Eliminar
             </button>
             <button mat-raised-button type="button" (click)="cerrarDialog()">

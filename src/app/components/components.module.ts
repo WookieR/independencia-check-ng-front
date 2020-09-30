@@ -14,6 +14,9 @@ import { ItemBorrarComponent } from './items/item-borrar/item-borrar.component';
 import { CategoriaNuevoComponent } from './categorias/categoria-nuevo/categoria-nuevo.component';
 import { CategoriaEditarComponent } from './categorias/categoria-editar/categoria-editar.component';
 import { CategoriaBorrarComponent } from './categorias/categoria-borrar/categoria-borrar.component';
+import { UsuarioNuevoComponent } from './usuarios/usuario-nuevo/usuario-nuevo.component';
+import { UsuarioEditarComponent } from './usuarios/usuario-editar/usuario-editar.component';
+import { UsuarioBorrarComponent } from './usuarios/usuario-borrar/usuario-borrar.component';
 
 
 
@@ -30,7 +33,10 @@ import { CategoriaBorrarComponent } from './categorias/categoria-borrar/categori
     ItemBorrarComponent,
     CategoriaNuevoComponent,
     CategoriaEditarComponent,
-    CategoriaBorrarComponent
+    CategoriaBorrarComponent,
+    UsuarioNuevoComponent,
+    UsuarioEditarComponent,
+    UsuarioBorrarComponent
   ],
   imports: [
     CommonModule,
