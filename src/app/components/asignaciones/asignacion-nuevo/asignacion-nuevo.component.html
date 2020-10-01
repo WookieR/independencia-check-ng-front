@@ -2,9 +2,9 @@
 <div class="main-div">
 
     <mat-card class="card-w">
-        <form [formGroup]="usuarioForm" (ngSubmit)="actualizarUsuario()">
+        <form [formGroup]="asignacionForm" (ngSubmit)="crearAsignacion()">
             <mat-card-header>
-                <mat-card-title class="f-titulo">Actualizar usuario</mat-card-title>
+                <mat-card-title class="f-titulo">Nueva Asignacion</mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <br/>
@@ -16,33 +16,26 @@
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input matInput formControlName="nombre" placeholder="Nombre" autocomplete="off">
+                                <input matInput formControlName="nombre" placeholder="Nombre de la asignacion" autocomplete="off">
                             </mat-form-field>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input matInput formControlName="apellido" placeholder="Apellido" autocomplete="off">
+                                <input matInput formControlName="descripcion" placeholder="Descripcion de la asignacion" autocomplete="off">
                             </mat-form-field>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input matInput formControlName="dni" placeholder="DNI" autocomplete="off">
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <mat-select formControlName="rol">
+                                <mat-select formControlName="item">
                                     <mat-option value="">
-                                        Seleccione un rol
+                                        Seleccione un item
                                     </mat-option>
-                                    <mat-option *ngFor="let rol of roles" [value]="rol.valor">
-                                        {{ rol.descripcion }}
+                                    <mat-option *ngFor="let item of items" [value]="item._id">
+                                        {{item.nombre}} - {{ item.sector.nombre}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -51,17 +44,23 @@
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input matInput formControlName="email" placeholder="Correo" autocomplete="off">
+                                <mat-select formControlName="categoria">
+                                    <mat-option value="">
+                                        Seleccione una categoria
+                                    </mat-option>
+                                    <mat-option *ngFor="let categoria of categorias" [value]="categoria._id">
+                                        {{categoria.descripcion}}
+                                    </mat-option>
+                                </mat-select>
                             </mat-form-field>
                         </td>
                     </tr>
-
                 </table>
 
             </mat-card-content>
             <mat-card-actions class="button-center">
                 <button mat-raised-button color="primary" type="submit">
-                    Actualizar
+                    Crear
                 </button>
                 <button mat-raised-button type="button" (click)="cerrarDialog()">
                     Cancelar

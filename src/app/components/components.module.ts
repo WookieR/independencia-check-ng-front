@@ -17,6 +17,9 @@ import { CategoriaBorrarComponent } from './categorias/categoria-borrar/categori
 import { UsuarioNuevoComponent } from './usuarios/usuario-nuevo/usuario-nuevo.component';
 import { UsuarioEditarComponent } from './usuarios/usuario-editar/usuario-editar.component';
 import { UsuarioBorrarComponent } from './usuarios/usuario-borrar/usuario-borrar.component';
+import { AsignacionNuevoComponent } from './asignaciones/asignacion-nuevo/asignacion-nuevo.component';
+import { AsignacionEditarComponent } from './asignaciones/asignacion-editar/asignacion-editar.component';
+import { AsignacionBorrarComponent } from './asignaciones/asignacion-borrar/asignacion-borrar.component';
 
 
 
@@ -36,7 +39,10 @@ import { UsuarioBorrarComponent } from './usuarios/usuario-borrar/usuario-borrar
     CategoriaBorrarComponent,
     UsuarioNuevoComponent,
     UsuarioEditarComponent,
-    UsuarioBorrarComponent
+    UsuarioBorrarComponent,
+    AsignacionNuevoComponent,
+    AsignacionEditarComponent,
+    AsignacionBorrarComponent
   ],
   imports: [
     CommonModule,
