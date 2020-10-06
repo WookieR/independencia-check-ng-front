@@ -1,0 +1,22 @@
+.maquina-card{
+    margin: 10px;
+    background-color: #e4e7eb;
+}
+
+.sector-card{
+    margin-top: 5px;
+    background-color: #d6dbe0;
+}
+
+.item-card{
+    margin-top: 5px;
+    background-color: #c9cfd6;
+}
+
+mat-card-header{
+    color: #666666;
+}
+
+table {
+    color: #666666;
+}

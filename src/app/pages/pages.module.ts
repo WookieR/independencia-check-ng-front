@@ -13,6 +13,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { MaterialModule } from '../material.module';
 import { PipesModule } from '../pipes/pipes.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReportesComponent } from './reportes/reportes.component';
+import { ControlComponent } from './control/control.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ItemsComponent,
     AsignacionesComponent,
     CategoriasComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ReportesComponent,
+    ControlComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +46,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ItemsComponent,
     AsignacionesComponent,
     CategoriasComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ReportesComponent,
+    ControlComponent
   ]
 })
 export class PagesModule { }

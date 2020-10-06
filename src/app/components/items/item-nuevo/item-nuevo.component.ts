@@ -23,7 +23,7 @@ export class ItemNuevoComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemForm = this.fb.group({
-      nombre: ['AWANTIAAA', [Validators.required, Validators.minLength(3)], []],
+      nombre: ['', [Validators.required, Validators.minLength(3)], []],
       sector: ['', [Validators.required], []]
     });
 

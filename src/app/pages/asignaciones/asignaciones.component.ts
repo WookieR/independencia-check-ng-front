@@ -18,10 +18,13 @@ export class AsignacionesComponent implements OnInit {
 
   public asignaciones: Asignacion[];
 
-  constructor(private asignacionesService: AsignacionesService, public authService: AuthService, public dialog: MatDialog) { }
+  constructor(private asignacionesService: AsignacionesService, public authService: AuthService, public dialog: MatDialog) {
+    this.cargando = true;
+  }
 
   ngOnInit(): void {
     this.asignacionesService.getAsignaciones().subscribe(resp => {
+      this.cargando = false;
       this.asignaciones = resp;
     });
   }

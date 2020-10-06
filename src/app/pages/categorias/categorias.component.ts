@@ -18,10 +18,13 @@ export class CategoriasComponent implements OnInit {
 
   public categorias: Categoria[];
 
-  constructor( private categoriasService: CategoriasService, public authService: AuthService, public dialog: MatDialog ) { }
+  constructor( private categoriasService: CategoriasService, public authService: AuthService, public dialog: MatDialog ) {
+    this.cargando = true;
+  }
 
   ngOnInit(): void {
     this.categoriasService.getCategorias().subscribe(resp => {
+      this.cargando = false;
       this.categorias = resp;
     });
   }

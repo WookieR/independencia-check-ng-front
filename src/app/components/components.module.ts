@@ -20,6 +20,8 @@ import { UsuarioBorrarComponent } from './usuarios/usuario-borrar/usuario-borrar
 import { AsignacionNuevoComponent } from './asignaciones/asignacion-nuevo/asignacion-nuevo.component';
 import { AsignacionEditarComponent } from './asignaciones/asignacion-editar/asignacion-editar.component';
 import { AsignacionBorrarComponent } from './asignaciones/asignacion-borrar/asignacion-borrar.component';
+import { ReporteNuevoComponent } from './reportes/reporte-nuevo/reporte-nuevo.component';
+import { ReporteActualizarComponent } from './reportes/reporte-actualizar/reporte-actualizar.component';
 
 
 
@@ -42,7 +44,9 @@ import { AsignacionBorrarComponent } from './asignaciones/asignacion-borrar/asig
     UsuarioBorrarComponent,
     AsignacionNuevoComponent,
     AsignacionEditarComponent,
-    AsignacionBorrarComponent
+    AsignacionBorrarComponent,
+    ReporteNuevoComponent,
+    ReporteActualizarComponent
   ],
   imports: [
     CommonModule,

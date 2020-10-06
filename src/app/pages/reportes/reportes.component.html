@@ -1,0 +1,33 @@
+<mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
+<mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
+
+<mat-card *ngIf="!cargando">
+    <mat-card-header>
+        <mat-card-title>Reportes</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let reporte of reportes">
+                {{ reporte.fecha | date:'shortDate' }} &nbsp;
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary">{{reporte.turno | turno}}</mat-chip>
+                    <mat-chip color="primary">{{reporte.usuario.apellido}} {{reporte.usuario.nombre}}</mat-chip>
+                    <mat-chip color="warn" *ngIf="reporte.activo">Pendiente</mat-chip>
+                    <mat-chip color="primary" *ngIf="!reporte.activo">Completado</mat-chip>
+                </mat-chip-list>
+                <span class="example-spacer"></span>
+                <button mat-stroked-button color="accent" *ngIf="reporte.activo" (click)="actualizarReporte(reporte)"><mat-icon>check_circle</mat-icon></button>
+                <button mat-stroked-button color="primary" *ngIf="!reporte.activo" (click)="verDetalles(reporte._id)"><mat-icon>open_in_browser</mat-icon></button>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngIf="authService.adminRole">
+                <button mat-raised-button color="primary" (click)="nuevoReporte()">
+                    <mat-icon>add</mat-icon>
+                    Abrir nuevo reporte
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

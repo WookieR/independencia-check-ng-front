@@ -16,7 +16,7 @@ export class MaquinaNuevoComponent implements OnInit {
 
   ngOnInit(): void {
     this.maquinaForm = this.fb.group({
-      nombre: ['Laguna', [Validators.required, Validators.minLength(3)], []],
+      nombre: ['', [Validators.required, Validators.minLength(3)], []],
       imagen: ['', [Validators.required]]
     });
   }

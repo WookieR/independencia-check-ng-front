@@ -18,10 +18,13 @@ export class UsuariosComponent implements OnInit {
 
   public cargando: boolean;
 
-  constructor( private usuariosService: UsuariosService, public authService: AuthService, public dialog: MatDialog ) { }
+  constructor( private usuariosService: UsuariosService, public authService: AuthService, public dialog: MatDialog ) {
+    this.cargando = true;
+  }
 
   ngOnInit(): void {
     this.usuariosService.getUsuarios().subscribe( resp => {
+      this.cargando = false;
       this.usuarios = resp;
     });
   }

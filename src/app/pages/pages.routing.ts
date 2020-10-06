@@ -9,6 +9,8 @@ import { SectoresComponent } from './sectores/sectores.component';
 import { ItemsComponent } from './items/items.component';
 import { AsignacionesComponent } from './asignaciones/asignaciones.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { ControlComponent } from './control/control.component';
 
 const routes: Routes = [
     {path: '', component: MainComponent, canActivate: [AuthGuard], children: [
@@ -19,6 +21,8 @@ const routes: Routes = [
         {path: 'items', component: ItemsComponent},
         {path: 'asignaciones', component: AsignacionesComponent},
         {path: 'categorias', component: CategoriasComponent},
+        {path: 'reportes', component: ReportesComponent},
+        {path: 'control/:id', component: ControlComponent},
         {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     ]}
 ];

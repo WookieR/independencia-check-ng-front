@@ -1,0 +1,35 @@
+<mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
+<mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
+<mat-card *ngFor="let maquina of detalle" class="maquina-card">
+    <mat-card-header>
+        <mat-card-title>{{maquina.nombre}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>    
+
+        <mat-card *ngFor="let sector of maquina.sectores" class="sector-card">
+            <mat-card-header>
+                <mat-card-title>{{ sector.nombre }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <mat-card *ngFor="let item of sector.items" class="item-card">
+                    <mat-card-header>
+                        <mat-card-title>{{ item.nombre }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+
+                        <table>
+                            <tr *ngFor="let medida of item.medidas">
+                                <td>{{medida.itemCategoria.nombre}}</td><td>{{medida.valor}}</td>
+                            </tr>
+                        </table>      
+                        
+        
+                    </mat-card-content>
+                </mat-card>
+
+            </mat-card-content>
+        </mat-card>
+
+    </mat-card-content>
+</mat-card>
