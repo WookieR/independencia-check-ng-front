@@ -30,7 +30,10 @@ export class ReporteMedidasService {
   getReporteMedidas(reporteId: string){
     return this.http.get(`${base_url}/reporte-medida/reporte/${reporteId}`, this.headers).pipe(
       map( (resp: RespuestaReporteMedidas) => {
-        return resp.reporteDetalle;
+        return {
+          reporteDetalle: resp.reporteDetalle,
+          reporte: resp.reporte
+        };
       })
     );
   }
