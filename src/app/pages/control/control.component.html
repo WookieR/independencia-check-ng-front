@@ -19,8 +19,13 @@
                     <mat-card-content>
 
                         <table>
+                            <tr>
+                                <th class="td-key">Apartado</th>
+                                <th class="td-value-head">Valor</th>
+                            </tr>
                             <tr *ngFor="let medida of item.medidas">
-                                <td>{{medida.itemCategoria.nombre}}</td><td>{{medida.valor}}</td>
+                                <td class="td-key">{{medida.itemCategoria.nombre}}</td>
+                                <td class="td-value">{{medida.valor}}</td>
                             </tr>
                         </table>      
                         

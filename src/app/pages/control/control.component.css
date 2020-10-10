@@ -20,3 +20,19 @@ mat-card-header{
 table {
     color: #666666;
 }
+
+.td-key{
+    width: 400px;
+    border: 1px solid;
+}
+
+.td-value{
+    text-align: right;
+    width: 200px;
+    border: 1px solid #666666;
+}
+
+.td-value-head{
+    width: 200px;
+    border: 1px solid #666666;
+}
