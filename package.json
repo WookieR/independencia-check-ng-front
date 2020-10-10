@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "~10.0.11",
     "@angular/router": "~10.0.11",
     "ngx-material-file-input": "^2.1.1",
+    "pdfmake": "^0.1.68",
+    "pdfmake-wrapper": "^2.0.0",
     "rxjs": "~6.5.5",
     "sweetalert2": "^10.3.3",
     "tslib": "^2.0.0",

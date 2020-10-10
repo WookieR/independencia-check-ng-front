@@ -36,3 +36,7 @@ table {
     width: 200px;
     border: 1px solid #666666;
 }
+
+.example-spacer {
+    flex: 1 1 auto;
+}
