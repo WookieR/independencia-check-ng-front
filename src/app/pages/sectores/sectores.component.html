@@ -14,7 +14,7 @@
             <mat-card-content>
                 <img [src]="sector.img | imagen:'sector'" class="w400" />
             </mat-card-content>
-            <mat-card-actions class="center-button">
+            <mat-card-actions class="center-button" *ngIf="authService.adminRole">
                 <button mat-icon-button color="primary" (click)="editarSector(sector)">
                     <mat-icon>edit</mat-icon>
                 </button>

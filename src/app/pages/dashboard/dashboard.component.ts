@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  tiles = [
+    {text: 'One', cols: 4, rows: 1, color: 'lightblue'},
+    {text: 'Three', cols: 2, rows: 1, color: 'lightpink'},
+    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

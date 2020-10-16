@@ -1,0 +1,12 @@
+.bg-gray {
+    background-color: #f6f6f6;
+}
+
+.parent {
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}

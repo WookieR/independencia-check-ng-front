@@ -13,8 +13,8 @@
                 {{ categoria.descripcion }} &nbsp;
 
                 <span class="example-spacer"></span>
-                <button mat-stroked-button color="primary" (click)="editarCategoria(categoria)"><mat-icon>edit</mat-icon></button>
-                <button mat-stroked-button color="primary" (click)="borrarCategoria(categoria)"><mat-icon>delete</mat-icon></button>
+                <button mat-stroked-button color="primary" (click)="editarCategoria(categoria)" *ngIf="authService.adminRole"><mat-icon>edit</mat-icon></button>
+                <button mat-stroked-button color="primary" (click)="borrarCategoria(categoria)" *ngIf="authService.adminRole"><mat-icon>delete</mat-icon></button>
                 <mat-divider></mat-divider>
             </mat-list-item>
             <mat-list-item role="listitem" *ngIf="authService.adminRole">

@@ -26,10 +26,7 @@ export class ReportesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.reportesService.getReportes().subscribe(resp => {
-      this.cargando = false;
-      this.reportes = resp;
-    });
+    this.obtenerReportes();
   }
 
   nuevoReporte(){
@@ -43,7 +40,10 @@ export class ReportesComponent implements OnInit {
       }
 
       this.reportes.push(resp);
+
+      this.obtenerReportes();
     });
+
   }
 
   actualizarReporte(reporte: Reporte){
@@ -68,6 +68,13 @@ export class ReportesComponent implements OnInit {
 
   verDetalles(reporteId: string){
     this.router.navigateByUrl(`/control/${reporteId}`);
+  }
+
+  obtenerReportes(){
+    this.reportesService.getReportes().subscribe(resp => {
+      this.cargando = false;
+      this.reportes = resp;
+    });
   }
 
 }

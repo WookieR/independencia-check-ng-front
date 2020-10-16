@@ -18,11 +18,11 @@
                 </mat-chip-list>
 
                 <span class="example-spacer"></span>
-                <button mat-stroked-button color="primary" (click)="editarAsignacion(asignacion)"><mat-icon>edit</mat-icon></button>
-                <button mat-stroked-button color="primary" (click)="borrarAsignacion(asignacion)"><mat-icon>delete</mat-icon></button>
+                <button mat-stroked-button color="primary" (click)="editarAsignacion(asignacion)" *ngIf="authService.adminRole"><mat-icon>edit</mat-icon></button>
+                <button mat-stroked-button color="primary" (click)="borrarAsignacion(asignacion)" *ngIf="authService.adminRole"><mat-icon>delete</mat-icon></button>
                 <mat-divider></mat-divider>
             </mat-list-item>
-            <mat-list-item role="listitem">
+            <mat-list-item role="listitem" *ngIf="authService.adminRole">
                 <button mat-raised-button color="primary" (click)="nuevaAsignacion()">
                     <mat-icon>add</mat-icon>
                     Crear asignacion

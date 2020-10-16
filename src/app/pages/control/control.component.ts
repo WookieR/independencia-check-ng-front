@@ -5,7 +5,7 @@ import { ReporteMaquina } from '../../interfaces/reporte-medidas.interface';
 import { Reporte } from '../../interfaces/reporte.interface';
 
 // PDF
-import { PdfMakeWrapper, Table, Txt, Stack, Ul, Cell } from 'pdfmake-wrapper';
+import { PdfMakeWrapper, Table, Txt, Stack, Ul, Cell, Img } from 'pdfmake-wrapper';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { stringify } from '@angular/compiler/src/util';
 
@@ -44,9 +44,13 @@ export class ControlComponent implements OnInit {
 
   }
 
-  generarPdf(maquina: ReporteMaquina){
+  async generarPdf(maquina: ReporteMaquina){
 
     const pdf = new PdfMakeWrapper();
+
+    pdf.pageMargins([20, 100]);
+
+    pdf.header( await new Img('./assets/PdfHeader.jpg').build() );
 
     const texto = new Txt(maquina.nombre).margin([10, 0, 0, 10]).bold().fontSize(20).end;
 
@@ -66,7 +70,7 @@ export class ControlComponent implements OnInit {
     const fechaString = `${fecha.getDate()}-${fecha.getMonth() + 1}-${fecha.getFullYear()}`;
 
     pdf.add( new Table([
-      ['Fecha', 'Turno', 'Operario'],
+      [new Txt('Fecha').bold().end, new Txt('Turno').bold().end, new Txt('Operario').bold().end],
       [`${fechaString}`, `${turno}`, `${this.reporte.usuario.apellido} ${this.reporte.usuario.nombre}`]
     ]).widths(['*', '*', 300]).margin([20, 10, 0, 10]).end);
 
@@ -88,7 +92,7 @@ export class ControlComponent implements OnInit {
         const tabla = new Table( valores
           // [new Txt(`${item.nombre}`).bold().end, new Txt(`Valor`).bold().end],
           // ['', '']
-        ).widths(['*', 300]).margin([20, 10, 0, 10]).end;
+        ).widths([200, 315]).margin([20, 10, 0, 10]).end;
 
         pdf.add(tabla);
 

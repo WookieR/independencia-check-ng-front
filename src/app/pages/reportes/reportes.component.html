@@ -18,7 +18,7 @@
                     <mat-chip color="primary" *ngIf="!reporte.activo">Completado</mat-chip>
                 </mat-chip-list>
                 <span class="example-spacer"></span>
-                <button mat-stroked-button color="accent" *ngIf="reporte.activo" (click)="actualizarReporte(reporte)"><mat-icon>check_circle</mat-icon></button>
+                <button mat-stroked-button color="accent" *ngIf="reporte.activo && authService.adminRole" (click)="actualizarReporte(reporte)"><mat-icon>check_circle</mat-icon></button>
                 <button mat-stroked-button color="primary" *ngIf="!reporte.activo" (click)="verDetalles(reporte._id)"><mat-icon>open_in_browser</mat-icon></button>
                 <mat-divider></mat-divider>
             </mat-list-item>
