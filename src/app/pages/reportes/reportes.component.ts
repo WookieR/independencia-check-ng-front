@@ -39,7 +39,7 @@ export class ReportesComponent implements OnInit {
         return;
       }
 
-      this.reportes.push(resp);
+      this.reportes.unshift(resp);
 
       this.obtenerReportes();
     });
@@ -71,6 +71,7 @@ export class ReportesComponent implements OnInit {
   }
 
   obtenerReportes(){
+    this.cargando = true;
     this.reportesService.getReportes().subscribe(resp => {
       this.cargando = false;
       this.reportes = resp;

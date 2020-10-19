@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  base_url: 'https://independencia-check-services.herokuapp.com'
+  production: true,
+  base_url: 'http://localhost:3000'
 };
 
 /*

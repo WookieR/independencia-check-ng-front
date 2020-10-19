@@ -1,7 +1,7 @@
 <mat-progress-bar mode="indeterminate" *ngIf="cargando"></mat-progress-bar>
 <mat-progress-bar *ngIf="!cargando"></mat-progress-bar>
 
-<mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" *ngIf="!cargando">
+<mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" *ngIf="!cargando" class="animated fadeIn fast">
     <mat-grid-tile *ngFor="let maquina of maquinas">
         <mat-card class="bg-gray">
             <mat-card-header>
